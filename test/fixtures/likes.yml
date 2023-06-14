@@ -3,11 +3,11 @@
 one:
   author_id: 1
   post_id: 1
-  CreatedAt: 2023-06-13 22:54:12
+  created_at: 2023-06-13 22:54:12
   updated_at: 2023-06-13 22:54:12
 
 two:
   author_id: 1
   post_id: 1
-  CreatedAt: 2023-06-13 22:54:12
+  created_at: 2023-06-13 22:54:12
   updated_at: 2023-06-13 22:54:12

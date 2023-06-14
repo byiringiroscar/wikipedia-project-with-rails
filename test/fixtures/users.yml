@@ -9,9 +9,9 @@ one:
   string: MyString
   updated_at: MyString
   datetime: MyString
-  CreatedAt: MyString
+  created_at: MyString
   datetime: MyString
-  PostCounter: 1
+  posts_counter: 1
 
 two:
   Name: MyString
@@ -22,6 +22,6 @@ two:
   string: MyString
   updated_at: MyString
   datetime: MyString
-  CreatedAt: MyString
+  created_at: MyString
   datetime: MyString
-  PostCounter: 1
+  posts_counter: 1

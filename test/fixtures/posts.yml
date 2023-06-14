@@ -6,7 +6,7 @@ one:
   Title: MyString
   string: MyString
   Text: MyText
-  CreatedAt: MyString
+  created_at: MyString
   datetime: MyString
   updated_at: MyString
   datetime: MyString
@@ -21,7 +21,7 @@ two:
   Title: MyString
   string: MyString
   Text: MyText
-  CreatedAt: MyString
+  created_at: MyString
   datetime: MyString
   updated_at: MyString
   datetime: MyString

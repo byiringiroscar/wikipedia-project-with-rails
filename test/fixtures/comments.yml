@@ -7,7 +7,7 @@ one:
   integer: MyString
   Text: MyText
   updated_at: 2023-06-13 22:52:13
-  CreatedAt: 2023-06-13 22:52:13
+  created_at: 2023-06-13 22:52:13
 
 two:
   author_id: MyString
@@ -16,4 +16,4 @@ two:
   integer: MyString
   Text: MyText
   updated_at: 2023-06-13 22:52:13
-  CreatedAt: 2023-06-13 22:52:13
+  created_at: 2023-06-13 22:52:13
