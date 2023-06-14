@@ -85,7 +85,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [No link yet]() 
+- [No link yet]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

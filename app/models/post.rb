@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user, foreign_key: :AuthorId
-  has_many :likes, foreign_key: :Postid
-  has_many :comments, foreign_key: :PostId
+  belongs_to :user, foreign_key: :author_id
+  has_many :likes, foreign_key: :post_id
+  has_many :comments, foreign_key: :post_id
 end

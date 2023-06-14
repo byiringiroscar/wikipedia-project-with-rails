@@ -7,7 +7,7 @@ one:
   string: MyString
   bio: MyString
   string: MyString
-  UpdatedAt: MyString
+  updated_at: MyString
   datetime: MyString
   CreatedAt: MyString
   datetime: MyString
@@ -20,7 +20,7 @@ two:
   string: MyString
   bio: MyString
   string: MyString
-  UpdatedAt: MyString
+  updated_at: MyString
   datetime: MyString
   CreatedAt: MyString
   datetime: MyString

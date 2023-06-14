@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  AuthorId: MyString
+  author_id: MyString
   integer: MyString
-  PostId: MyString
+  post_id: MyString
   integer: MyString
   Text: MyText
-  UpdatedAt: 2023-06-13 22:52:13
+  updated_at: 2023-06-13 22:52:13
   CreatedAt: 2023-06-13 22:52:13
 
 two:
-  AuthorId: MyString
+  author_id: MyString
   integer: MyString
-  PostId: MyString
+  post_id: MyString
   integer: MyString
   Text: MyText
-  UpdatedAt: 2023-06-13 22:52:13
+  updated_at: 2023-06-13 22:52:13
   CreatedAt: 2023-06-13 22:52:13
