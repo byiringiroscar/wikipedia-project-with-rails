@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author_id: MyString
+  integer: MyString
+  Title: MyString
+  string: MyString
+  Text: MyText
+  created_at: MyString
+  datetime: MyString
+  updated_at: MyString
+  datetime: MyString
+  CommentsCounter: MyString
+  integer: MyString
+  LikesCounter: MyString
+  integer: MyString
+
+two:
+  author_id: MyString
+  integer: MyString
+  Title: MyString
+  string: MyString
+  Text: MyText
+  created_at: MyString
+  datetime: MyString
+  updated_at: MyString
+  datetime: MyString
+  CommentsCounter: MyString
+  integer: MyString
+  LikesCounter: MyString
+  integer: MyString
