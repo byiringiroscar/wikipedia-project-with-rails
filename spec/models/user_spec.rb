@@ -20,4 +20,18 @@ RSpec.describe User, type: :model do
     subject.name = nil
     expect(subject).to_not be_valid
   end
+  it 'is not valid with a negative posts_counter' do
+    subject.posts_counter = -1
+    expect(subject).to_not be_valid
+  end
+
+  it 'is valid with a posts_counter equal to zero' do
+    subject.posts_counter = 0
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with a positive posts_counter' do
+    subject.posts_counter = 5
+    expect(subject).to be_valid
+  end
 end
