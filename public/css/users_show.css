@@ -6,173 +6,183 @@
   box-sizing: border-box;
 }
 
-.container-user-single{
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 10px;
-    gap: 15px;
+.container-user-single {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+  gap: 15px;
 }
 
-.user-info{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    border-radius: 10px;
-    transition: 0.3s;
-    border: 1px solid #dedede;
+.user-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  border-radius: 10px;
+  transition: 0.3s;
+  border: 1px solid #dedede;
 }
 
-.user-info:hover{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.user-info:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
-.user-image{
-    height: 50%;
-    width: 100%;
-    padding: 5px;
+
+.user-image {
+  height: 50%;
+  width: 100%;
+  padding: 5px;
 }
-.user-image img{
+
+.user-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.user-info .user-name {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: start;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #333;
+  padding: 5px;
+  position: relative;
+}
+
+.user-name h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #333;
+}
+
+.user-name span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 14px;
+}
+
+.user-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+}
+
+.user-bio h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #333;
+}
+
+.user-bio p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.user-post-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.post {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 4px;
+  border: 1px solid #333;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.post:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+.post-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #333;
+}
+
+.post-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  width: 60%;
+}
+
+.post-stat {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.user-post-container a {
+  text-decoration: none;
+  color: #333;
+  padding: 4px 6px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-post-container a:hover {
+  background-color: #333;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
+}
+
+@media all and (min-width: 768px) {
+  .container-user-single {
+    padding: 30px 200px;
+  }
+
+  .user-info {
+    flex-direction: row;
+  }
+
+  .user-image {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 45%;
+  }
 
-}
-.user-info .user-name{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: start;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: #333;
-    padding: 5px;
-    position: relative;
-}
+  .user-image img {
+    width: 70%;
+  }
 
-.user-name h4{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 900;
-    color: #333;
-
-}
-.user-name span{
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 14px;
-}
-.user-bio{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #dedede;
-    border-radius: 10px;
-}
-.user-bio h4{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 900;
-    color: #333;
-}
-
-.user-bio p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #333;
-}
-.user-post-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .user-info .user-name {
+    height: 100%;
+    width: 55%;
     align-items: center;
-}
+  }
 
-.post{
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 14px 4px;
-    border: 1px solid #333;
-    position: relative;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.post:hover{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.post-title{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 900;
-    color: #333;
-}
-.post-description{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #333;
-    width: 60%;
-}
-
-.post-stat{
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.user-post-container a{
-    text-decoration: none;
-    color: #333;
-    padding: 4px 6px;
-    border: 2px solid black;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.user-post-container a:hover{
-    background-color: #333;
-    color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-@media all and (min-width: 768px){
-    .container-user-single{
-        padding: 30px 200px;
-    }
-    .user-info{
-        flex-direction: row;
-    }
-    .user-info .user-name{
-        align-items: center;
-    }
-    .user-image{
-        height: 100%;
-        width: 45%;
-    }
-    .user-image img{
-        width: 70%;
-    }
-    .user-info .user-name{
-        height: 100%;
-        width: 55%;
-    }
-
-    .user-name span{
-        bottom: 15px;
-        right: 15px;
-    }
+  .user-name span {
+    bottom: 15px;
+    right: 15px;
+  }
 }
