@@ -6,7 +6,7 @@
   <body>
      <div class="card-container-user">
         <% @users.each do | user | %>
-        <div class="card-user">
+        <a href="<%= user_path(user.id) %>" class="card-user">
             <div class="card-image">
                 <% if user.photo.present? %>
                   <img src="<%= user.photo %>">
@@ -18,7 +18,7 @@
                 <h4><%= user.name %></h4>
                 <span class="num_posts">Number of Posts: <%= user.posts_counter || 0 %></span>
             </div>
-        </div>
+        </a>
         <% end %>
      </div>
   </body>

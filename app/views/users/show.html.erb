@@ -27,13 +27,13 @@
                 <div class="post">
                     <h4 class="post-title"><%= post.title %></p>
                     <h4 class="post-description"><%= post.text %></p>
-                    <span class="post-stat">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
+                    <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
                 </div>
                 <% end %>
             <% else %>
                 <h3>No post found</h3>
             <% end %>
-            <a href='#!'>See All Posts </a>
+            <%= link_to 'See All Posts', user_posts_path(@user) %>
         </div>
         <% else %>
             <div class="error">

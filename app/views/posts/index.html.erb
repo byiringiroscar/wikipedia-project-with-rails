@@ -9,42 +9,38 @@
     <section class="container-user-single">
         <div class="user-info">
             <div class="user-image">
-                <img src="https://media.licdn.com/dms/image/D4D03AQGuXJA3Ivalpw/profile-displayphoto-shrink_800_800/0/1681189256993?e=2147483647&v=beta&t=i_Wa_G4hGClvBn1RXY6iNl2l07pAhaXe8CWbGPQRxl8">
+                <img src="<%= @user.photo %>">
             </div>
             <div class="user-name">
-                <h4>Oscar Byiringiro</h4>
-                <span class="num_posts">Number of Posts: 10</span>
+                <h4><%= @user.name %></h4>
+                <span class="num_posts">Number of Posts: <%= @user.posts_counter ||0 %></span>
             </div>
         </div>
         <div class="posts-container">
-          <div class="single-post">
+          <% if @posts.any? %>
+          <% @posts.each do |post| %>
+          <a href="<%= user_post_path(@user.id, post.id) %>" class="single-post">
             <div class="post">
-              <h4 class="title">come on </h4>
-              <p class="desc">it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of</p>
-              <span>Comments: 2, Likes: 4</span>
+              <h4 class="title"><%= post.title %></h4>
+              <p class="desc"><%= post.text %></p>
+              <span>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
             </div>
             <div class="comments">
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
+              <% if post.comments.any? %>
+                <% post .comments.each do |comment| %>
+                <p><%= comment.user.name %>: <%= comment.text %> </p>
+                <% end %>
+              <% else %>
+                  <p>No comments yet</p>
+              <% end %>
             </div>
-          </div>
-          <div class="single-post">
-            <div class="post">
-              <h4 class="title">come on </h4>
-              <p class="desc">it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of</p>
-              <span>Comments: 2, Likes: 4</span>
+          </a>
+          <% end %>
+          <% else %>
+            <div class="error">
+                <h4>Sorry, no posts found</h4>
             </div>
-            <div class="comments">
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-              <p>Username: Comment 1</p>
-            </div>
-          </div>
+          <% end %>
           <a href="#!" class="pagination-btn">Pagination</a>
         </div>
     </section>
