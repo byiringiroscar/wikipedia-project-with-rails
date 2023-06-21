@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-container-user {
+  width: 100vw;
+  height: auto;
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-user {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.card-user:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.card-image {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image img {
+  height: 100%;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.card-description {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card-description h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.card-description .num_posts {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+@media all and (min-width: 768px) {
+  .card-container-user {
+    padding: 70px 250px;
+  }
+
+  .card-user {
+    flex-direction: row;
+  }
+
+  .card-image {
+    width: 40%;
+    height: 100%;
+    justify-content: start;
+  }
+
+  .card-description {
+    width: 60%;
+    height: 100%;
+  }
+
+  .card-description .num_posts {
+    bottom: 15px;
+    right: 15px;
+  }
+}
