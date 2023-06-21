@@ -160,6 +160,9 @@
     .user-info{
         flex-direction: row;
     }
+    .user-info .user-name{
+        align-items: center;
+    }
     .user-image{
         height: 100%;
         width: 45%;
