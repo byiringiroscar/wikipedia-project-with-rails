@@ -6,38 +6,42 @@
   </head>
   <body>
     <section class="container-user-single">
+        <% if @user %>
         <div class="user-info">
             <div class="user-image">
-                <img src="https://media.licdn.com/dms/image/D4D03AQGuXJA3Ivalpw/profile-displayphoto-shrink_800_800/0/1681189256993?e=2147483647&v=beta&t=i_Wa_G4hGClvBn1RXY6iNl2l07pAhaXe8CWbGPQRxl8">
+                <img src="<%= @user.photo  %>">
             </div>
             <div class="user-name">
-                <h4>Oscar Byiringiro</h4>
-                <span class="num_posts">Number of Posts: 10</span>
+                <h4><%= @user.name  %></h4>
+                <span class="num_posts">Number of Posts: <%= @user.posts_counter || 0 %></span>
             </div>
         </div>
         <div class="user-bio">
             <h4>Bio</h4>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            <p><%= @user.bio%></p>
 
         </div>
         <div class="user-post-container">
-            <div class="post">
-                <h4 class="post-title">Game on</p>
-                <h4 class="post-description">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of</p>
-                <span class="post-stat">Comments: 4, Likes: 8</span>
-            </div>
-            <div class="post">
-                <h4 class="post-title">Game on</p>
-                <h4 class="post-description">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of</p>
-                <span class="post-stat">Comments: 4, Likes: 8</span>
-            </div>
-            <div class="post">
-                <h4 class="post-title">Game on</p>
-                <h4 class="post-description">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of</p>
-                <span class="post-stat">Comments: 4, Likes: 8</span>
-            </div>
+            <% if @user.posts.any? %>
+                <% @user.posts.each do |post| %>
+                <div class="post">
+                    <h4 class="post-title"><%= post.title %></p>
+                    <h4 class="post-description"><%= post.text %></p>
+                    <span class="post-stat">Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
+                </div>
+                <% end %>
+            <% else %>
+                <h3>No post found</h3>
+            <% end %>
             <a href='#!'>See All Posts </a>
         </div>
+        <% else %>
+            <div class="error">
+                <h4>Sorry, user not found</h4>
+                <img src="https://cdn141.picsart.com/354155909038211.png">
+            </div>
+        <% end %>
+
     </section>
   </body>
 </html>
