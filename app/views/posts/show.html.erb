@@ -1,1 +1,48 @@
-<h1>Here is single post</h1>
+<!-- index.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/posts_show.css">
+  </head>
+  <body>
+    <section class="single-post-info">
+      <% if @user %>
+        <% if @post %>
+          <div class="single-post">   
+              <div class="single-post-title">
+                  <h4><%= @post.title %></h4>
+                  <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+
+              </div>
+              <div class="single-post-bio">
+                  <p><%= @post.text%></p>
+              </div>
+          </div>
+          <div class="comments">
+                  <% if @post.comments.any? %>
+                  <% @post.comments.each do |comment| %>
+                  <p><%= comment.user.name%>: <%= comment.text %></p>
+                  <% end %>
+                  <% else %>
+                      <p>No comments yet</p>
+                  <% end %>
+          </div>
+          <% else %>
+          <div class="error">
+                <h4>Sorry, post not found</h4>
+                <img src="https://cdn141.picsart.com/354155909038211.png">
+          </div>
+        <% end %>
+        <% else %>
+          <div class="error">
+                <h4>Sorry, user not found</h4>
+                <img src="https://cdn141.picsart.com/354155909038211.png">
+          </div>
+      <% end %>
+
+
+
+    
+    </section>
+  </body>
+</html>

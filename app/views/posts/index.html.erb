@@ -1,1 +1,54 @@
-<h1>Here is full list of posts</h1>
+<!-- index.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/users_posts.css">
+  </head>
+  <body>
+    <% if @user %>
+    <section class="container-user-single">
+        <div class="user-info">
+            <div class="user-image">
+                <img src="<%= @user.photo %>">
+            </div>
+            <div class="user-name">
+                <h4><%= @user.name %></h4>
+                <span class="num_posts">Number of Posts: <%= @user.posts_counter ||0 %></span>
+            </div>
+        </div>
+        <div class="posts-container">
+          <% if @posts.any? %>
+          <% @posts.each do |post| %>
+          <a href="<%= user_post_path(@user.id, post.id) %>" class="single-post">
+            <div class="post">
+              <h4 class="title"><%= post.title %></h4>
+              <p class="desc"><%= post.text %></p>
+              <span>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
+            </div>
+            <div class="comments">
+              <% if post.comments.any? %>
+                <% post .comments.each do |comment| %>
+                <p><%= comment.user.name %>: <%= comment.text %> </p>
+                <% end %>
+              <% else %>
+                  <p>No comments yet</p>
+              <% end %>
+            </div>
+          </a>
+          <% end %>
+          <% else %>
+            <div class="error">
+                <h4>Sorry, no posts found</h4>
+            </div>
+          <% end %>
+          <a href="#!" class="pagination-btn">Pagination</a>
+        </div>
+    </section>
+    <% else %>
+        <div class="error">
+                <h4>Sorry, user not found</h4>
+                <img src="https://cdn141.picsart.com/354155909038211.png">
+            </div>
+    <% end %>
+  </body>
+</html>

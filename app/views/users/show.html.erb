@@ -1,1 +1,47 @@
-<h1>Here is single users</h1>
+<!-- index.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/users_show.css">
+  </head>
+  <body>
+    <section class="container-user-single">
+        <% if @user %>
+        <div class="user-info">
+            <div class="user-image">
+                <img src="<%= @user.photo  %>">
+            </div>
+            <div class="user-name">
+                <h4><%= @user.name  %></h4>
+                <span class="num_posts">Number of Posts: <%= @user.posts_counter || 0 %></span>
+            </div>
+        </div>
+        <div class="user-bio">
+            <h4>Bio</h4>
+            <p><%= @user.bio%></p>
+
+        </div>
+        <div class="user-post-container">
+            <% if @user.posts.any? %>
+                <% @user.posts.each do |post| %>
+                <div class="post">
+                    <h4 class="post-title"><%= post.title %></p>
+                    <h4 class="post-description"><%= post.text %></p>
+                    <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
+                </div>
+                <% end %>
+            <% else %>
+                <h3>No post found</h3>
+            <% end %>
+            <%= link_to 'See All Posts', user_posts_path(@user) %>
+        </div>
+        <% else %>
+            <div class="error">
+                <h4>Sorry, user not found</h4>
+                <img src="https://cdn141.picsart.com/354155909038211.png">
+            </div>
+        <% end %>
+
+    </section>
+  </body>
+</html>

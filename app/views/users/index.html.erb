@@ -1,1 +1,25 @@
-<h1>Here is full of users</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/users.css">
+  </head>
+  <body>
+     <div class="card-container-user">
+        <% @users.each do | user | %>
+        <a href="<%= user_path(user.id) %>" class="card-user">
+            <div class="card-image">
+                <% if user.photo.present? %>
+                  <img src="<%= user.photo %>">
+                <% else %>
+                  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+                <% end %>
+            </div>
+            <div class="card-description">
+                <h4><%= user.name %></h4>
+                <span class="num_posts">Number of Posts: <%= user.posts_counter || 0 %></span>
+            </div>
+        </a>
+        <% end %>
+     </div>
+  </body>
+</html>
