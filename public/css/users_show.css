@@ -113,7 +113,8 @@
 }
 
 .post:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  background-color: #dedede !important;
+  box-shadow: none !important;
 }
 
 .post-title {
@@ -176,6 +177,14 @@
 .error img {
   height: 100px;
   width: 100px;
+}
+
+.success {
+  color: green;
+}
+
+.error-mesage {
+  color: red;
 }
 
 @media all and (min-width: 768px) {
