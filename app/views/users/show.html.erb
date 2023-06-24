@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/users_show.css">
   </head>
   <body>
@@ -21,15 +22,48 @@
             <p><%= @user.bio%></p>
 
         </div>
+        <div class="">
+            <!-- app/views/posts/new.html.erb -->
+
+            <h1>New Post</h1>
+            <% if flash[:error] %>
+                <div class="error-mesage">
+                    <%= flash[:error] %>
+                </div>
+            <% elsif flash[:success] %>
+                <div class="success">
+                    <%= flash[:success] %>
+                </div>
+            <% end %>
+            <%= form_with(url: create_user_post_path(@user), method: :post) do |form| %>
+
+                <%= form.label :title %>
+                <%= form.text_field :title, name: 'post[title]' %>
+
+                <%= form.label :text %>
+                <%= form.text_area :text, name: 'post[text]' %>
+
+                <%= form.submit "Create Post" %>
+            <% end %>
+
+        </div>
         <div class="user-post-container">
             <% if @user.posts.any? %>
                 <% @user.posts.each do |post| %>
-                <div class="post">
-                    <h4 class="post-title"><%= post.title %></p>
-                    <h4 class="post-description"><%= post.text %></p>
-                    <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
-                </div>
-                <% end %>
+            <div data-href="<%= user_post_path(@user.id, post.id) %>" class="post">
+                <h4 class="post-title"><%= post.title %></h4>
+                <h4 class="post-description"><%= post.text %></h4>
+                <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %>
+                <form action="<%= create_user_post_like_path(@user.id, post.id) %>" method="post" class="like-form">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <button type="submit" class="like-button">
+                        <img src="https://pngimg.com/uploads/like/like_PNG24.png" style="width: 20px; height: 20px;">
+                    </button>
+                </form>
+                </span>
+            </div>
+            <% end %>
+
             <% else %>
                 <h3>No post found</h3>
             <% end %>
@@ -43,5 +77,15 @@
         <% end %>
 
     </section>
+
+    <script>
+        $(document).ready(function() {
+        $('.post').click(function() {
+            var redirectUrl = $(this).data('href');
+            window.location.href = redirectUrl;
+        });
+        });
+
+    </script>
   </body>
 </html>

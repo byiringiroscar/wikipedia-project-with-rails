@@ -60,6 +60,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.success {
+  color: green;
+}
+
+.error-mesage {
+  color: red;
+}
+
 @media all and (min-width: 768px) {
   .single-post-info {
     padding: 20px 200px;

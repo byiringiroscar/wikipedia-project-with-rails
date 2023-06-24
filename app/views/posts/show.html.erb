@@ -18,6 +18,23 @@
                   <p><%= @post.text%></p>
               </div>
           </div>
+          <div class="comment-form">
+            <h2>Add Comments </h2>
+            <% if flash[:error] %>
+                <div class="error-message">
+                    <%= flash[:error] %>
+                </div>
+            <% elsif flash[:success] %>
+                <div class="success">
+                    <%= flash[:success] %>
+                </div>
+            <% end %>
+            <%= form_with(url: create_user_post_comment_path(@user, @post), method: :post) do |form| %>
+                <%= form.label :text %>
+                <%= form.text_area :text, name: 'comment[text]' %>
+                <%= form.submit "Add Comment" %>
+            <% end %>
+          </div>
           <div class="comments">
                   <% if @post.comments.any? %>
                   <% @post.comments.each do |comment| %>
