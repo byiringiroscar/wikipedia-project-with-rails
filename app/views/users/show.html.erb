@@ -52,7 +52,8 @@
                     <a href="<%= user_post_path(@user.id, post.id) %>" class="post">
                         <h4 class="post-title"><%= post.title %></h4>
                         <h4 class="post-description"><%= post.text %></h4>
-                        <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
+                        <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %>
+                        </span>
                     </a>
                 <% end %>
             <% else %>

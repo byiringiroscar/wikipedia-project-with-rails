@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params[:user_id])
     @posts = @user&.posts
+    @posts = @user.posts.order(created_at: :desc)
     return if @user
 
     flash.now[:error] = 'User not found'

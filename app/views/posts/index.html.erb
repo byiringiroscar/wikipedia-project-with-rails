@@ -23,7 +23,12 @@
             <div class="post">
               <h4 class="title"><%= post.title %></h4>
               <p class="desc"><%= post.text %></p>
-              <span>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></span>
+              <span>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %>
+              <a href="<%= create_user_post_like_path(@user.id, post.id) %>" class="like">
+                <img src="https://pngimg.com/uploads/like/like_PNG24.png">
+              </a>
+
+              </span>
             </div>
             <div class="comments">
               <% if post.comments.any? %>
