@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/users_show.css">
   </head>
   <body>
@@ -49,13 +50,17 @@
         <div class="user-post-container">
             <% if @user.posts.any? %>
                 <% @user.posts.each do |post| %>
-                    <a href="<%= user_post_path(@user.id, post.id) %>" class="post">
-                        <h4 class="post-title"><%= post.title %></h4>
-                        <h4 class="post-description"><%= post.text %></h4>
-                        <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %>
-                        </span>
-                    </a>
-                <% end %>
+            <div data-href="<%= user_post_path(@user.id, post.id) %>" class="post">
+                <h4 class="post-title"><%= post.title %></h4>
+                <h4 class="post-description"><%= post.text %></h4>
+                <span class="post-stat">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %>
+                <a href="<%= create_user_post_like_path(@user.id, post.id) %>" class="like">
+                    <img src="https://pngimg.com/uploads/like/like_PNG24.png">
+                </a>
+                </span>
+            </div>
+            <% end %>
+
             <% else %>
                 <h3>No post found</h3>
             <% end %>
@@ -69,5 +74,15 @@
         <% end %>
 
     </section>
+
+    <script>
+        $(document).ready(function() {
+        $('.post').click(function() {
+            var redirectUrl = $(this).data('href');
+            window.location.href = redirectUrl;
+        });
+        });
+
+    </script>
   </body>
 </html>
