@@ -38,7 +38,7 @@
           <div class="comments">
                   <% if @post.comments.any? %>
                   <% @post.comments.each do |comment| %>
-                  <p><%= comment.user.name%>: <%= comment.text %></p>
+                  <p class="new-list-comment"><%= comment.user.name%>: <%= comment.text %></p>
                   <% end %>
                   <% else %>
                       <p>No comments yet</p>
