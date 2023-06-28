@@ -17,7 +17,7 @@ RSpec.describe 'Post Show', type: :feature, js: false do
     it 'should have how many comments' do
       expect(page).to have_content("Comments: #{post.comments.count}")
     end
-    it 'should have  how many likes it has' do
+    it 'should have how many likes it has' do
       expect(page).to have_content("Likes: #{post.likes.count}")
     end
     it 'should have the post body' do
