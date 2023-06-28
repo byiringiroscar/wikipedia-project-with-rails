@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-
 RSpec.describe 'User Show', type: :feature, js: false do
   before do
     visit user_path(2)
@@ -17,7 +16,6 @@ RSpec.describe 'User Show', type: :feature, js: false do
     it 'should display user name' do
       expect(page).to have_content user.name
     end
-
 
     it 'should display number of posts for each user' do
       expect(page).to have_content("Number of Posts: #{user.posts.count}")
