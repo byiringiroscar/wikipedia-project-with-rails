@@ -78,6 +78,9 @@ After you're finished please remove all the comments and instructions!
 
 
 - **Add Models**
+- **Add Interface**
+- **Add Add comments, likes and posts**
+- **Add testing**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,6 +184,10 @@ Example command:
 - GitHub: [@githuboscar](https://github.com/byiringiroscar)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/oscar-byiringiro-9baa8313a/)
 
+👤 **Belden Mugauri**
+
+- GitHub: [@githubelden](https://github.com/Munyabelden)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -215,6 +222,7 @@ If you like this project you can buy me cofee here [link](https://www.linkedin.c
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - **I would like to thank microverse for make this thing happen**
+- **I would like to thank My coding partner**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
