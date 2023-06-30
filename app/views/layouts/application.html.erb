@@ -7,9 +7,31 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+      <style>
+        .notice{
+          color: green;
+          text-align: center;
+          margin: 0 auto;
+        }
+        .alert{
+          color: red;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+
+      </style>
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.name %></strong>.
+   <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+   <% end %>
+
     <%= yield %>
   </body>
 </html>
