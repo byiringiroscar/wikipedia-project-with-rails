@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
       u.permit(:email, :name, :photo, :bio, :password, :current_password)
     end
   end
+
   private
+
   def after_sign_in_path_for(_resource_or_scope)
     users_path
   end
