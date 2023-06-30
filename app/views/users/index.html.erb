@@ -5,6 +5,7 @@
   </head>
   <body>
      <div class="card-container-user">
+      <% if @users.any? %>
         <% @users.each do | user | %>
         <a href="<%= user_path(user.id) %>" class="card-user">
             <div class="card-image">
@@ -16,10 +17,13 @@
             </div>
             <div class="card-description">
                 <h4><%= user.name %></h4>
-                <span class="num_posts">Number of Posts: <%= user.posts_counter || 0 %></span>
+                <span class="num_posts">Number of Posts: <%= user.posts.count || 0 %></span>
             </div>
         </a>
         <% end %>
+        <% else %>
+          <h1>No users found</h1>
+      <% end %>
      </div>
   </body>
 </html>

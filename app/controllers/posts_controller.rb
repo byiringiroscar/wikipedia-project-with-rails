@@ -32,18 +32,18 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: user_path(params[:user_id]))
   end
 
-  def createcomment
-    @user = current_user
-    @post = @user.posts.find(params[:id])
-    @comment = @post.comments.build(comment_params)
-    @comment.author_id = @user.id
-    if @comment.save
-      flash[:success] = 'Comment created successfully!'
-    else
-      flash[:error] = 'Comment not created'
-    end
-    redirect_to user_post_path(@user.id, @post.id)
-  end
+  # def createcomment
+  #   @user = current_user
+  #   @post = @user.posts.find(params[:id])
+  #   @comment = @post.comments.build(comment_params)
+  #   @comment.author_id = @user.id
+  #   if @comment.save
+  #     flash[:success] = 'Comment created successfully!'
+  #   else
+  #     flash[:error] = 'Comment not created'
+  #   end
+  #   redirect_to user_post_path(@user.id, @post.id)
+  # end
 
   private
 
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :text)
   end
 
-  def comment_params
-    params.require(:comment).permit(:text)
-  end
+  # def comment_params
+  #   params.require(:comment).permit(:text)
+  # end
 end

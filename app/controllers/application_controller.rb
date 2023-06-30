@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def current_user
-    @current_user ||= User.find_by(id: params[:user_id]) || User.first
-  end
+  before_action :authenticate_user!
 
-  helper_method :current_user
+  before_action :update_allowed_parameters, if: :devise_controller?
 end
