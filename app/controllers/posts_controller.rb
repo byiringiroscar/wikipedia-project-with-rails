@@ -32,18 +32,26 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: user_path(params[:user_id]))
   end
 
-  # def createcomment
-  #   @user = current_user
-  #   @post = @user.posts.find(params[:id])
-  #   @comment = @post.comments.build(comment_params)
-  #   @comment.author_id = @user.id
-  #   if @comment.save
-  #     flash[:success] = 'Comment created successfully!'
-  #   else
-  #     flash[:error] = 'Comment not created'
-  #   end
-  #   redirect_to user_post_path(@user.id, @post.id)
-  # end
+  def destroy
+    # logged in user
+    @user = current_user
+    @post = Post.find_by(id: params[:id])
+    if can?(:destroy, @post)
+        if @post
+          @post.destroy
+          flash[:success] = 'Post deleted successfully!'
+          redirect_to user_posts_path(@user.id)
+        else
+          flash[:error] = 'Post not found'
+          redirect_to user_posts_path(@user.id)
+        end
+    else
+      flash[:error] = 'You are not authorized to delete this post'
+      redirect_to user_post_path(@post.user.id, @post.id)
+    end
+      
+  end
+  
 
   private
 
