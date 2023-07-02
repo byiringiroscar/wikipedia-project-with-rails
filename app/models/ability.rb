@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,14 +5,16 @@ class Ability
     can :read, :all
 
     return unless user.present?
-    
+
     can :manage, User, id: user.id
     can :manage, Post, author_id: user.id
     can :manage, Comment, author_id: user.id
     can :create, Like
     can :destroy, Post, author_id: user.id
+    can :destroy, Comment, author_id: user.id
 
     return unless user.role == 'admin'
+
     can :manage, :all
 
     # Define abilities for the user here. For example:

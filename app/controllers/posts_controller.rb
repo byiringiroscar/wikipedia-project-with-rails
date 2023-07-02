@@ -37,21 +37,19 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.find_by(id: params[:id])
     if can?(:destroy, @post)
-        if @post
-          @post.destroy
-          flash[:success] = 'Post deleted successfully!'
-          redirect_to user_posts_path(@user.id)
-        else
-          flash[:error] = 'Post not found'
-          redirect_to user_posts_path(@user.id)
-        end
+      if @post
+        @post.destroy
+        flash[:success] = 'Post deleted successfully!'
+      else
+        flash[:error] = 'Post not found'
+      end
+      redirect_to user_posts_path(@user.id)
     else
       flash[:error] = 'You are not authorized to delete this post'
       redirect_to user_post_path(@post.user.id, @post.id)
     end
-      
   end
-  
+
 
   private
 

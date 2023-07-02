@@ -39,7 +39,8 @@
           <div class="comments">
                   <% if @post.comments.any? %>
                   <% @post.comments.each do |comment| %>
-                  <p class="new-list-comment"><%= comment.user.name%>: <%= comment.text %></p>
+                  <p class="new-list-comment"><%= comment.user.name%>: <%= comment.text %>---<%= button_to 'Delete comment', delete_user_post_comment_path(@post, comment.id), method: :delete %></p>
+                  
                   <% end %>
                   <% else %>
                       <p>No comments yet</p>
