@@ -16,6 +16,8 @@ class Ability
     return unless user.role == 'admin'
 
     can :manage, :all
+    can :destroy, Comment
+    can :destroy, Post
 
     # Define abilities for the user here. For example:
     #
